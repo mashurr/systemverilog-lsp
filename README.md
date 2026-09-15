@@ -1,6 +1,8 @@
-# SystemVerilog LSP
+# SystemVerilog IntelliSense
 
 Verilog and SystemVerilog language support that understands your whole project: live errors, go to definition, hover and completion.
+
+![SystemVerilog IntelliSense in action: hover, go to definition, completion and a live error](images/demo.gif)
 
 ## Features
 
@@ -11,8 +13,8 @@ Verilog and SystemVerilog language support that understands your whole project: 
 - **Syntax coloring, outline and folding** that keep working while code is incomplete.
 - **No setup needed**: open a folder and its `.v` and `.sv` files are found automatically.
 - **Responsive on large designs**: errors show up first while navigation finishes in the background.
-- **Everything included**: no compiler or other tools to install. Works on remote Linux hosts too.
-- **Restart** the language server from the command palette: **SystemVerilog LSP: Restart**.
+- **Everything included**: no compiler or other tools to install.
+- **Restart** the language server from the command palette: **SystemVerilog IntelliSense: Restart**.
 
 ## Project Configuration
 

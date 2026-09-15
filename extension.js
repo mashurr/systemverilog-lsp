@@ -7,12 +7,12 @@ let client;
 let restarting;
 
 async function activate(context) {
-    const output = vscode.window.createOutputChannel('SystemVerilog LSP');
+    const output = vscode.window.createOutputChannel('SystemVerilog IntelliSense');
     const watcher = vscode.workspace.createFileSystemWatcher('**/*');
     context.subscriptions.push(output, watcher);
     const executable = context.asAbsolutePath(path.join('bin', process.platform === 'win32' ? 'sv-lsp.exe' : 'sv-lsp'));
     let failures = 0;
-    client = new LanguageClient('systemverilogLsp', 'SystemVerilog LSP',
+    client = new LanguageClient('systemverilogLsp', 'SystemVerilog IntelliSense',
         { command: executable, args: [], options: { env: process.env } }, {
             documentSelector: [
                 { scheme: 'file', language: 'verilog' },
@@ -25,8 +25,8 @@ async function activate(context) {
                 closed: () => {
                     failures += 1;
                     if (failures <= 3) return { action: CloseAction.Restart };
-                    output.appendLine('Server stopped repeatedly. Run SystemVerilog LSP: Restart after checking this output.');
-                    vscode.window.showErrorMessage('SystemVerilog LSP stopped repeatedly. See the SystemVerilog LSP output channel.');
+                    output.appendLine('Server stopped repeatedly. Run SystemVerilog IntelliSense: Restart after checking this output.');
+                    vscode.window.showErrorMessage('SystemVerilog IntelliSense stopped repeatedly. See the SystemVerilog IntelliSense output channel.');
                     return { action: CloseAction.DoNotRestart };
                 },
             },
@@ -37,7 +37,7 @@ async function activate(context) {
             await client.start();
         } catch (error) {
             output.appendLine(`Could not launch ${executable}: ${error.stack || error.message}`);
-            vscode.window.showErrorMessage(`SystemVerilog LSP could not start. Reinstall the extension for ${process.platform}-${process.arch} and check the SystemVerilog LSP output channel.`);
+            vscode.window.showErrorMessage(`SystemVerilog IntelliSense could not start. Reinstall the extension for ${process.platform}-${process.arch} and check the SystemVerilog IntelliSense output channel.`);
         }
     }
     context.subscriptions.push(vscode.commands.registerCommand('verilogLsp.restart', async () => {
