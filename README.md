@@ -13,7 +13,7 @@ Verilog and SystemVerilog language support that understands your whole project: 
 - **Syntax coloring, outline and folding** that keep working while code is incomplete.
 - **No setup needed**: open a folder and its `.v` and `.sv` files are found automatically.
 - **Responsive on large designs**: errors show up first while navigation finishes in the background.
-- **Everything included**: no compiler or other tools to install. Works on remote Linux hosts too.
+- **Everything included**: no compiler or other tools to install.
 - **Restart** the language server from the command palette: **SystemVerilog IntelliSense: Restart**.
 
 ## Project Configuration
