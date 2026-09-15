@@ -1,6 +1,6 @@
 {
   "name": "systemverilog-lsp-simple",
-  "displayName": "SystemVerilog LSP",
+  "displayName": "SystemVerilog IntelliSense",
   "description": "Verilog and SystemVerilog language support with live errors, go to definition, hover and completion",
   "version": "0.2.0",
   "publisher": "mashurr",
@@ -45,7 +45,7 @@
     "commands": [
       {
         "command": "verilogLsp.restart",
-        "title": "SystemVerilog LSP: Restart"
+        "title": "SystemVerilog IntelliSense: Restart"
       }
     ],
     "semanticTokenScopes": [
