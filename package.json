@@ -1,0 +1,140 @@
+{
+  "name": "systemverilog-lsp-simple",
+  "displayName": "SystemVerilog LSP",
+  "description": "Verilog and SystemVerilog language support with live errors, go to definition, hover and completion",
+  "version": "0.2.0",
+  "publisher": "mashurr",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mashurr/systemverilog-lsp.git"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:verilog",
+    "onLanguage:systemverilog"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "verilog",
+        "aliases": [
+          "Verilog"
+        ],
+        "extensions": [
+          ".v",
+          ".vh"
+        ]
+      },
+      {
+        "id": "systemverilog",
+        "aliases": [
+          "SystemVerilog"
+        ],
+        "extensions": [
+          ".sv",
+          ".svh"
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "verilogLsp.restart",
+        "title": "SystemVerilog LSP: Restart"
+      }
+    ],
+    "semanticTokenScopes": [
+      {
+        "language": "verilog",
+        "scopes": {
+          "namespace": [
+            "entity.name.type.module"
+          ],
+          "type": [
+            "entity.name.type"
+          ],
+          "function": [
+            "entity.name.function"
+          ],
+          "variable": [
+            "variable.other"
+          ],
+          "macro": [
+            "entity.name.function.preprocessor"
+          ],
+          "keyword": [
+            "keyword.control"
+          ],
+          "comment": [
+            "comment"
+          ],
+          "string": [
+            "string"
+          ],
+          "number": [
+            "constant.numeric"
+          ],
+          "operator": [
+            "keyword.operator"
+          ]
+        }
+      },
+      {
+        "language": "systemverilog",
+        "scopes": {
+          "namespace": [
+            "entity.name.type.module"
+          ],
+          "type": [
+            "entity.name.type"
+          ],
+          "function": [
+            "entity.name.function"
+          ],
+          "variable": [
+            "variable.other"
+          ],
+          "macro": [
+            "entity.name.function.preprocessor"
+          ],
+          "keyword": [
+            "keyword.control"
+          ],
+          "comment": [
+            "comment"
+          ],
+          "string": [
+            "string"
+          ],
+          "number": [
+            "constant.numeric"
+          ],
+          "operator": [
+            "keyword.operator"
+          ]
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run bundle",
+    "bundle": "esbuild extension.js --bundle --platform=node --target=node20 --external:vscode --outfile=dist/extension.js --metafile=dist/meta.json",
+    "lint": "node --check extension.js"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "3.6.2",
+    "esbuild": "0.25.10"
+  },
+  "dependencies": {
+    "vscode-languageclient": "9.0.1"
+  },
+  "license": "MIT",
+  "extensionKind": [
+    "workspace"
+  ]
+}
