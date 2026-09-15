@@ -4,6 +4,17 @@
   "description": "Verilog and SystemVerilog language support with live errors, go to definition, hover and completion",
   "version": "0.2.0",
   "publisher": "mashurr",
+  "icon": "icon.png",
+  "keywords": [
+    "verilog",
+    "systemverilog",
+    "hdl",
+    "rtl",
+    "fpga",
+    "asic",
+    "intellisense",
+    "go to definition"
+  ],
   "engines": {
     "vscode": "^1.90.0"
   },

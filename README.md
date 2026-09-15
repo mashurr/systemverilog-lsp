@@ -2,6 +2,8 @@
 
 Verilog and SystemVerilog language support that understands your whole project: live errors, go to definition, hover and completion.
 
+![SystemVerilog IntelliSense in action: hover, go to definition, completion and a live error](images/demo.gif)
+
 ## Features
 
 - **Live errors** as you type, including unsaved files and headers.
